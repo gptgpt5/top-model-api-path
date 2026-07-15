@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://gptgpt5.github.io/top-model-api-path/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <title>Top Model Api Path | Free2AI</title>
+  <meta name="description" content="Access notes for GPT-5.6, Claude Opus 4.8 4.8, Gemini 3.5 3.5, DeepSeek V4 V4, Qwen3.73.7 and Grok 4.5 4.5 through lightweight AI API relay and gateway routes.">
+  <meta name="keywords" content="top-model-api-path,gpt-api-gift-free,free AI relay,cheap LLM gateway,GPT-5.6,Claude Opus 4.8 4.8,Gemini 3.5 3.5,DeepSeek V4 V4,Qwen3.73.7,Grok 4.5 4.5,Llama,Mistral,OpenAI API,ChatGPT relay,Claude API,Gemini 3.5 API,AIGC,AI gateway,api proxy,ai-router,OPPO style clean UI">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GPT-5.6、Claude Opus 4.8 API 通道 | Free2AI 3.0">
+  <meta property="og:description" content="高速低成本的大模型 API 中转入口，首屏直达 GPT-5.6 与 Claude Opus 4.8 通道。">
+  <meta property="og:url" content="https://gptgpt5.github.io/top-model-api-path/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Free2AI 3.0","url":"https://free2ai.pages.dev/index3.0.html","inLanguage":"zh-CN","description":"GPT-5.6、Claude Opus 4.8、Claude Opus 4.8 与 Gemini 3.5 API 通道导航。"}</script>
+  <style>
+    :root {
+      --paper: #f7f7f2;
+      --ink: #10110f;
+      --muted: #666960;
+      --line: #1b1c19;
+      --green: #14975d;
+      --red: #ff4b36;
+      --cream: #ece8dc;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(16,17,15,.045) 1px, transparent 1px) 0 0 / 72px 72px,
+        linear-gradient(180deg, #fbfbf6, var(--paper));
+      font-family: "IBM Plex Sans", "Noto Sans SC", sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
+    .wrap { width: min(1320px, calc(100% - 44px)); margin: 0 auto; }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 86px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      color: #fff;
+      background: var(--ink);
+      border-radius: 50%;
+      font-size: 13px;
+    }
+
+    .version {
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+
+    .top nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    .top nav a {
+      padding: 10px 14px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: #4d504a;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .top nav a:hover {
+      border-color: var(--line);
+      background: #fff;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) 430px;
+      gap: 36px;
+      padding: 56px 0 44px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .hero-main {
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-right: 30px;
+      border-right: 2px solid var(--line);
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 8px 11px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .label::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    h1 {
+      max-width: 860px;
+      margin: 26px 0 0;
+      font-size: clamp(64px, 8vw, 128px);
+      line-height: .86;
+      letter-spacing: -.085em;
+    }
+
+    h1 span { color: var(--red); }
+
+    .lead {
+      max-width: 760px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .primary-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+      max-width: 760px;
+    }
+
+    .cta {
+      position: relative;
+      min-height: 116px;
+      padding: 18px;
+      border: 2px solid var(--line);
+      background: #fff;
+      border-radius: 0;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .cta strong {
+      display: block;
+      max-width: 250px;
+      font-size: 27px;
+      line-height: 1.05;
+      letter-spacing: -.055em;
+    }
+
+    .cta span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .cta::after {
+      content: "↗";
+      position: absolute;
+      right: 18px;
+      top: 14px;
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      font-size: 18px;
+      transition: transform .2s ease;
+    }
+
+    .cta.gpt {
+      color: #fff;
+      background: var(--ink);
+    }
+
+    .cta.gpt span { color: rgba(255,255,255,.66); }
+    .cta.claude { background: #e5f5ec; }
+    .cta:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--red); }
+    .cta:hover::after { transform: rotate(45deg); }
+
+    .hero-side {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 18px;
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      padding: 26px;
+      border: 2px solid var(--line);
+      background: var(--cream);
+      min-height: 370px;
+    }
+
+    .panel-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .big-number {
+      position: absolute;
+      left: 22px;
+      bottom: 6px;
+      font-size: 170px;
+      line-height: .8;
+      letter-spacing: -.1em;
+      font-weight: 800;
+    }
+
+    .moving-bar {
+      position: absolute;
+      right: -20%;
+      top: 42%;
+      width: 76%;
+      height: 18px;
+      background: var(--green);
+      animation: slideBar 4s ease-in-out infinite alternate;
+    }
+
+    .panel-note {
+      padding: 18px;
+      border: 2px solid var(--line);
+      background: var(--red);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .ticker {
+      overflow: hidden;
+      border-bottom: 2px solid var(--line);
+      background: var(--line);
+      color: #fff;
+    }
+
+    .track {
+      display: flex;
+      width: max-content;
+      padding: 14px 0;
+      animation: ticker 34s linear infinite;
+    }
+
+    .ticker:hover .track { animation-play-state: paused; }
+    .group { display: flex; }
+    .group span {
+      padding: 0 25px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .group span::before {
+      content: "/";
+      margin-right: 13px;
+      color: var(--red);
+    }
+
+    .content {
+      padding: 56px 0 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(42px, 5vw, 76px);
+      line-height: .95;
+      letter-spacing: -.07em;
+    }
+
+    .section-head p {
+      justify-self: end;
+      max-width: 430px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .route-table {
+      border: 2px solid var(--line);
+    }
+
+    .route-row {
+      display: grid;
+      grid-template-columns: 210px 1fr 180px;
+      min-height: 132px;
+      border-bottom: 2px solid var(--line);
+      background: #fff;
+      transition: background .2s ease;
+    }
+
+    .route-row:last-child { border-bottom: 0; }
+    .route-row:hover { background: #f1f1ea; }
+    .route-cell {
+      display: flex;
+      align-items: center;
+      padding: 22px;
+      border-right: 2px solid var(--line);
+    }
+
+    .route-cell:last-child { border-right: 0; }
+    .route-code { color: var(--red); font-size: 12px; font-weight: 800; }
+    .route-name {
+      font-size: clamp(25px, 3vw, 42px);
+      line-height: 1;
+      letter-spacing: -.055em;
+      font-weight: 800;
+    }
+
+    .route-desc {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .route-button {
+      justify-content: center;
+      color: #fff;
+      background: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .route-row:nth-child(2) .route-button { background: var(--red); }
+    .route-button::after { content: " ↗"; }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 28px;
+      border: 2px solid var(--line);
+      border-bottom: 0;
+    }
+
+    .fact {
+      min-height: 170px;
+      padding: 22px;
+      border-right: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      background: #fff;
+    }
+
+    .fact:last-child { border-right: 0; }
+    .fact b { color: var(--red); font-size: 12px; }
+    .fact h3 { margin: 36px 0 8px; font-size: 18px; }
+    .fact p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 30px 0 44px;
+      color: #777a72;
+      font-size: 12px;
+    }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: .55s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+
+    @keyframes slideBar { to { transform: translateX(-42%); } }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-main { min-height: auto; padding-right: 0; padding-bottom: 34px; border-right: 0; border-bottom: 2px solid var(--line); }
+      .hero-side { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
+      .panel { min-height: 260px; }
+      .big-number { font-size: 120px; }
+      .route-row { grid-template-columns: 150px 1fr 150px; }
+      .facts { grid-template-columns: 1fr 1fr; }
+      .fact:nth-child(2) { border-right: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 24px, 1320px); }
+      .top nav { display: none; }
+      .hero { padding-top: 34px; }
+      h1 { font-size: clamp(56px, 18vw, 86px); }
+      .primary-actions { grid-template-columns: 1fr; }
+      .hero-side { grid-template-columns: 1fr; }
+      .section-head { grid-template-columns: 1fr; }
+      .section-head p { justify-self: start; }
+      .route-row { grid-template-columns: 1fr; }
+      .route-cell { border-right: 0; border-bottom: 2px solid var(--line); }
+      .route-cell:last-child { border-bottom: 0; min-height: 72px; }
+      .facts { grid-template-columns: 1fr; }
+      .fact { border-right: 0; }
+      footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="#top"><span class="brand-mark">F3</span><span>Free2AI <span class="version">3.0</span></span></a>
+    <nav><a href="#routes">通道入口</a><a href="#facts">能力说明</a><a href="https://t.me/kkscshop" target="_blank" rel="noopener noreferrer">联系</a></nav>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero">
+      <div class="hero-main">
+        <div>
+          <span class="label">Structured model gateway</span>
+          <h1>清晰入口，<br><span>直接可点。</span></h1>
+          <p class="lead">聚合 GPT-5.6、Claude Opus 4.8、Claude Opus 4.8 与 Gemini 3.5 等主流模型通道，为代码生成、开发测试、自动化脚本和内容工作流提供低成本、稳定的 API 接入选择。</p>
+          <div class="primary-actions">
+            <a class="cta gpt" href="https://pay.kklt.lol/" target="_blank" rel="noopener noreferrer"><strong>进入 GPT-5.6 通道</strong><span>pay.kklt.lol</span></a>
+            <a class="cta claude" href="https://fuckme.443.hk/" target="_blank" rel="noopener noreferrer"><strong>进入 Claude Opus 4.8 通道</strong><span>fuckme.443.hk</span></a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side" aria-label="页面状态">
+        <div class="panel"><div class="panel-top"><span>routes online</span><span>v3.0</span></div><div class="moving-bar"></div><strong class="big-number">02</strong></div>
+        <div class="panel-note">GPT-5.6 与 Claude Opus 4.8 主力通道在线，覆盖多种开发与内容生产场景。</div>
+      </aside>
+    </section>
+
+    <div class="ticker" aria-label="支持模型"><div class="track"><div class="group"><span>GPT-5.6</span><span>GPT-5.6</span><span>GPT-5.6</span><span>claude-opus-4-8</span><span>claude-sonnet-5</span><span>Claude Opus 4.8</span><span>gemini</span></div><div class="group" aria-hidden="true"><span>GPT-5.6</span><span>GPT-5.6</span><span>GPT-5.6</span><span>claude-opus-4-8</span><span>claude-sonnet-5</span><span>Claude Opus 4.8</span><span>gemini</span></div></div></div>
+
+    <section class="wrap content reveal" id="routes">
+      <div class="section-head"><h2>通道列表</h2><p>按模型体系查看可用入口，进入服务页面后可进一步了解套餐、额度与调用方式。</p></div>
+      <div class="route-table">
+        <article class="route-row"><div class="route-cell route-code">ROUTE 01</div><div class="route-cell"><div><strong class="route-name">GPT-5.6 / Luna Sol Terra</strong><p class="route-desc">适合代码生成、开发测试、脚本运行和高频自动化调用。</p></div></div><a class="route-cell route-button" href="https://pay.kklt.lol/" target="_blank" rel="noopener noreferrer">Open</a></article>
+        <article class="route-row"><div class="route-cell route-code">ROUTE 02</div><div class="route-cell"><div><strong class="route-name">Claude Opus 4.8 / Claude Opus 4.8</strong><p class="route-desc">全模型支持，超低价格，支持二级分销，分销收益可提现。</p></div></div><a class="route-cell route-button" href="https://fuckme.443.hk/" target="_blank" rel="noopener noreferrer">Open</a></article>
+      </div>
+    </section>
+
+    <section class="wrap facts reveal" id="facts"><article class="fact"><b>01</b><h3>首屏直达</h3><p>两个主按钮在第一屏直接可见。</p></article><article class="fact"><b>02</b><h3>模型覆盖</h3><p>GPT、Claude、Fable、Gemini 3.5。</p></article><article class="fact"><b>03</b><h3>低成本</h3><p>适合测试和高频调用。</p></article><article class="fact"><b>04</b><h3>分销能力</h3><p>支持二级分销与收益提现。</p></article></section>
+  </main>
+
+  <footer class="wrap"><span>Free2AI 3.0 · Swiss Information Edition</span><span>使用第三方服务前请核验条款、价格与稳定性。</span></footer>
+
+  <script>const r=document.querySelectorAll('.reveal');if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver'in window)){r.forEach(x=>x.classList.add('show'))}else{const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');o.unobserve(e.target)}}),{threshold:.1});r.forEach(x=>o.observe(x))}</script>
+</body>
+</html>
